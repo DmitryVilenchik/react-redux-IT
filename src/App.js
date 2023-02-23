@@ -1,24 +1,50 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
 import './App.css';
+import Profile from './components/Profile/Profile';
+import Dialogs from './components/Dialogs/Dialogs';
+//import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import News from './components/News/News';
+import Music from './components/Music/Music';
+import Settings from './components/Settings/Settings';
+import store from './redux/store';
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import Users from "./components/Users/UsersContainer";
+import UsersContainer from "./components/Users/UsersContainer";
+import NewsContainer from "./components/News/NewsContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
-function App() {
+const App=(props)=> {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div className='app-wrapper'>
+    <Header />
+    <Navbar />
+    <div className='app-wrapper-content'>
+     <Routes>
+     <Route path='/dialogs/' element={<DialogsContainer />}/>
+     </Routes>
+     <Routes>
+     <Route path='/profile/*' element={<ProfileContainer />}/>
+     </Routes>
+        <Routes>
+            <Route path='/users' element={<UsersContainer />}/>
+        </Routes>
+     <Routes>
+     <Route path='/news' element={<NewsContainer />}/>
+     </Routes>
+     <Routes>
+     <Route path='/music' element={<Music />}/>           
+     </Routes>
+     <Routes>
+     <Route path='/settings' element={<Settings />}/>           
+     </Routes>
     </div>
+    </div>
+    </Router>
   );
 }
 
