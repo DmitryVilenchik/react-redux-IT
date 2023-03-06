@@ -12,6 +12,7 @@ import Settings from './components/Settings/Settings';
 import store from './redux/store';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Users from "./components/Users/UsersContainer";
+import LoginPage from "./components/Login/Login"
 import UsersContainer from "./components/Users/UsersContainer";
 import NewsContainer from "./components/News/NewsContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -33,6 +34,9 @@ const App=(props)=> {
      </Routes>
         <Routes>
             <Route path='/users' element={<UsersContainer />}/>
+        </Routes>
+        <Routes>
+            <Route path='/login' element={<LoginPage />}/>
         </Routes>
      <Routes>
      <Route path='/news' element={<NewsContainer />}/>
