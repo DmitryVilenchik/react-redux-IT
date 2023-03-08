@@ -2,7 +2,7 @@ import React from "react";
 //import s from './MyPosts.module.css';
 //import Post from "./Post/Post";
 import {addPostActionCreator} from './../../../redux/profile-reducer';
-import {updateNewPostTextActionCreator} from './../../../redux/profile-reducer';
+//import {updateNewPostTextActionCreator} from './../../../redux/profile-reducer';
 import MyPosts from "./MyPosts";
 //import StoreContext from "../../../StoreContext";
 import {connect} from "react-redux";
@@ -39,11 +39,8 @@ const mapStateToProps=(state)=>{
 
 const mapDispathToProps=(dispatch)=>{
     return {
-        updateNewPostText: (text)=> {
-            let action=updateNewPostTextActionCreator(text);
-                    dispatch(action);
-        },
-        addPost: ()=>{dispatch(addPostActionCreator());
+
+        addPost: (newPostText)=>{dispatch(addPostActionCreator(newPostText));
 
         }
     }
