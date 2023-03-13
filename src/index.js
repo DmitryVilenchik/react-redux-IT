@@ -6,6 +6,10 @@ import App from './App';
 //import StoreContext from "./StoreContext";
 import {Provider} from "react-redux";
 
+/* setInterval (() => {
+    store.dispatch({type: "Fake"})
+},1000); */
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
