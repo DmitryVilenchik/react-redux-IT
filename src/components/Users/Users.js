@@ -10,7 +10,7 @@ let Users=({currentPage, totalUserCount, pageSize, onPageChanged, users, ...prop
                 props.onPageChanged(p)}}>{p}</span>})}
 
         </div> */}
-        < Paginator currentPage={props.currentPage} onPageChanged={onPageChanged} totalUserCount={totalUserCount}
+        < Paginator currentPage={props.currentPage} onPageChanged={onPageChanged} totalItemsCount={totalUserCount}
                    pageSize={pageSize} />
         <div>
         {users.map(u => <User user={u}
