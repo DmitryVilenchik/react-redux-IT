@@ -16,7 +16,7 @@ let initialState=
     currentPage: 1,
     isFetching: false,
     followingInProgress: []
-
+    
 };
 
 
